@@ -4,3 +4,4 @@ class Transaction:
         self.category = category
         self.amount = amount
         self.date = date
+
