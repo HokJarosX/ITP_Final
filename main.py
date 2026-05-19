@@ -9,7 +9,7 @@ def main():
     print(report, "\n")
 
     sum = monthlySummary(tr)
-    print(sum)
+    print(f"Часть димаша, {sum}")
 
     print(f"All transactions: {tr}")
 
