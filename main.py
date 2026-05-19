@@ -11,7 +11,8 @@ def main():
     sum = monthlySummary(tr)
     print(sum)
 
-    print(tr)
+    print(f"All transactions: {tr}")
 
+    print(f"Часть Абыля(категории):{report}")
 
 main()
