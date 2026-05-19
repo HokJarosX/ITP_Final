@@ -54,7 +54,8 @@ def UserInterface():
         elif x == 4:
             result = detect_overspending(tr, my_budgets)
             print_overspending_report(result)
-
+        elif x == 5:
+            break
 
 
 
