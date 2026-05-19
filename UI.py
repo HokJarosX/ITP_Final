@@ -7,7 +7,10 @@ from services.monthlySummary import monthlySummary
 def setBudget(my_budget):
     categories = input("Enter categories: ")
     if categories in my_budget:
-        my_budget[categories] = int(input("Enter integer: "))
+        try:
+            my_budget[categories] = int(input("Enter integer: "))
+        except ValueError:
+            print("Invalid input")
     else:
         print("Invalid input")
 
