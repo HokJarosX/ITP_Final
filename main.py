@@ -1,18 +1,11 @@
 from classes import transactions
+from services.overspending import detect_overspending, print_overspending_report
 from input.parser import load
 from services.expences import catergories_expenses
 from services.monthlySummary import monthlySummary
+from UI import UserInterface
+
 def main():
-    tr = load("data/transaction.json")
-
-    report = catergories_expenses(tr)
-    print(report, "\n")
-
-    sum = monthlySummary(tr)
-    print(f"Часть димаша, {sum}")
-
-    print(f"All transactions: {tr}")
-
-    print(f"Часть Абыля(категории):{report}")
+   UI = UserInterface()
 
 main()
