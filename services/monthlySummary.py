@@ -19,3 +19,11 @@ def monthlySummary(transactions):
 
 
     return incomeExpemceConutAndTotal
+
+
+def detect_overspending():
+    return None
+
+
+def print_overspending_report():
+    return None
