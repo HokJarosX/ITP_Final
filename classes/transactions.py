@@ -6,6 +6,4 @@ class Transaction:
         self.date = date
 
     def __repr__(self):
-        cat = self.category if self.category else "No category"
-        return f"({self.date} | {self.type.upper()} | {cat} | {self.amount}$)"
-
+        return f"{self.type}{self.type.upper()}{self.category or "No category"}{self.amount }$"
