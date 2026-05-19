@@ -13,3 +13,5 @@ def monthlySummary(transactions):
         else:
             monthlySummary["expensesCount"] += 1
             monthlySummary["totalExpenses"] += transaction.amount
+
+    return incomeExpemceConutAndTotal
