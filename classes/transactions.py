@@ -6,4 +6,4 @@ class Transaction:
         self.date = date
 
     def __repr__(self):
-        return f"{self.type} {self.type.upper()} {self.category or "No category"} {self.amount}$"
+        return f"{self.type} {self.type.upper()} {self.category or 'No category'} {self.amount}$"
