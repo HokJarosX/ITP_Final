@@ -1,17 +1,21 @@
 def monthlySummary(transactions):
     incomeExpemceConutAndTotal = {"incomeCount": 0,
-                      "expensesCount": 0,
-                      "totalIncome": 0,
-                      "totalExpenses": 0}
+                    "expensesCount": 0,
+                    "totalIncome": 0,
+                    "totalExpenses": 0,
+                                  "currentBalance":0}
 
 
     for transaction in transactions:
         if transaction.type == "income":
-            monthlySummary["incomeCount"] += 1
-            monthlySummary["totalIncome"] += transaction.amount
+            incomeExpemceConutAndTotal["incomeCount"] += 1
+            incomeExpemceConutAndTotal["totalIncome"] += transaction.amount
+            incomeExpemceConutAndTotal["currentBalance"] += transaction.amount
 
         else:
-            monthlySummary["expensesCount"] += 1
-            monthlySummary["totalExpenses"] += transaction.amount
+            incomeExpemceConutAndTotal["expensesCount"] += 1
+            incomeExpemceConutAndTotal["totalExpenses"] += transaction.amount
+            incomeExpemceConutAndTotal["currentBalance"] -= transaction.amount
+
 
     return incomeExpemceConutAndTotal
