@@ -1,9 +1,11 @@
 from input.parser import load
-from services.expences import catergories_expenses
+from services import monthlySummary
+from services.expences import categories_expenses
 def main():
     tr = load("data/transaction.json")
 
-    report = catergories_expenses(tr)
+    report = categories_expenses(tr)
+    monthlySummary = monthlySummary(tr)
     print(report)
 
     print(tr)
