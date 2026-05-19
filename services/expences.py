@@ -9,6 +9,3 @@ def catergories_expenses(transactions):
     return expences
 
 
-if __name__=="__main__":
-    transactions = load("data/transaction.json")
-    print(catergories_expenses(transactions))
