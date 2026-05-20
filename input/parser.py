@@ -9,6 +9,7 @@ def load(path):
         print("File not found")
         return []
 
+
     transactions = []
 
     for i in data:

@@ -23,7 +23,7 @@ def print_overspending_report(result):
 
 def get_default_budgets():
     return {
-        "foof": 50,
+        "food": 50,
         "transport": 15,
         "shopping": 50,
     }

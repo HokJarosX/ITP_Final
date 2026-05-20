@@ -2,6 +2,7 @@ from input.parser import load
 from classes.transactions import Transaction
 
 
+
 def catergories_expenses(transactions):
     expences = {}
     for tr in transactions:
