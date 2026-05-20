@@ -9,6 +9,7 @@ def detect_overspending(transactions, budgets):
     actual = catergories_expenses(transactions)
     result = {}
 
+
     for catagory, limit in budgets.items():
         spent = actual.get(catagory, 0)
         if spent > limit:

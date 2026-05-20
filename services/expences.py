@@ -1,5 +1,6 @@
 from input.parser import load
 
+
 def catergories_expenses(transactions):
     expences = {}
     for tr in transactions:
