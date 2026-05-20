@@ -17,3 +17,9 @@ class Transaction:
         return self._amount
     def getDate(self):
         return self._date
+
+    def __str__(self):
+        return (f"|type = {self._type}|"
+                f"|category = {self._category}|"
+                f"|amount = {self._amount}|"
+                f"|date = {self._date}|")
