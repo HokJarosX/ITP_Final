@@ -1,12 +1,10 @@
 from input.parser import load
+from UI import UserInterface
 from services.expences import catergories_expenses
 def main():
-    tr = load("data/transaction.json")
+    UserInterface()
 
-    report = catergories_expenses(tr)
-    print(report)
 
-    print(tr)
 
 
 
