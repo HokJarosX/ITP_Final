@@ -18,6 +18,9 @@ def detect_overspending(transactions, budgets):
     return result
 
 def print_overspending_report(result):
+    if not result:
+        print("no overspending detected")
+        return
     for category, info in result.items():
         print(f"{category}: overspent by ${info['over_by']}")
 
@@ -30,13 +33,21 @@ def get_default_budgets():
 
 if __name__ == "__main__":
 
-    transactions = load("data/transaction.json")
+    try:
 
-    result = detect_overspending(
+        transactions = load("data/transaction.json")
+
+        result = detect_overspending(
         transactions,
         get_default_budgets()
-    )
+        )
 
-    print_overspending_report(result)
+        print_overspending_report(result)
+    except FileNotFoundError:
+        print("Transacction file not found")
+
+    except Exception as e:
+        print("An error occured ", e)
+
 
 
