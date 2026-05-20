@@ -1,13 +1,21 @@
 import json
 from classes.transactions import Transaction
 
+def successfully(func):
+    def wrapper(*args, **kwargs):
+        try:
+            result = func(*args, **kwargs)
+            print("File loaded successfully")
+            return result
+        except FileNotFoundError:
+            print("File not found")
+            return []
+    return wrapper
+
+@successfully
 def load(path):
-    try:
-        with open(path, 'r') as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        print("File not found")
-        return []
+    with open(path, 'r') as file:
+        data = json.load(file)
 
     transactions = []
 

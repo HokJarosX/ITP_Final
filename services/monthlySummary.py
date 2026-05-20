@@ -1,3 +1,6 @@
+from classes.transactions import Transaction
+
+
 def monthlySummary(transactions):
     incomeExpemceConutAndTotal = {"incomeCount": 0,
                     "expensesCount": 0,
@@ -7,15 +10,15 @@ def monthlySummary(transactions):
 
 
     for transaction in transactions:
-        if transaction.type == "income":
+        if transaction.getType() == "income":
             incomeExpemceConutAndTotal["incomeCount"] += 1
-            incomeExpemceConutAndTotal["totalIncome"] += transaction.amount
-            incomeExpemceConutAndTotal["currentBalance"] += transaction.amount
+            incomeExpemceConutAndTotal["totalIncome"] += transaction.getAmount()
+            incomeExpemceConutAndTotal["currentBalance"] += transaction.getAmount()
 
         else:
             incomeExpemceConutAndTotal["expensesCount"] += 1
-            incomeExpemceConutAndTotal["totalExpenses"] += transaction.amount
-            incomeExpemceConutAndTotal["currentBalance"] -= transaction.amount
+            incomeExpemceConutAndTotal["totalExpenses"] += transaction.getAmount()
+            incomeExpemceConutAndTotal["currentBalance"] -= transaction.getAmount()
 
 
     return incomeExpemceConutAndTotal
