@@ -23,3 +23,5 @@ class Transaction:
                 f"|category = {self._category}|"
                 f"|amount = {self._amount}|"
                 f"|date = {self._date}|")
+    def __iter__(self):
+        return iter([self.type,self.category,self.amount,self.date])
