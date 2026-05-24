@@ -1,7 +1,6 @@
 from input.parser import load
 from services.expences import catergories_expenses
 
-
 def detect_overspending(transactions, budgets):
     actual = catergories_expenses(transactions)
     result = {}
@@ -31,6 +30,7 @@ def get_default_budgets():
         "shopping": 50,
     }
 
+
 if __name__ == "__main__":
 
     try:
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
         print_overspending_report(result)
     except FileNotFoundError:
-        print("Transacction file not found")
+        print("Transaction file not found ")
 
     except Exception as e:
         print("An error occured ", e)
