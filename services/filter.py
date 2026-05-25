@@ -21,3 +21,14 @@ class FilterCategory(Filter):
             if transcription.getCategory() == self._goal:
                 result.append(transcription)
         return result
+
+class FilterData(Filter):
+    def __init__(self, transcriptions = None, goal = ""):
+        super().__init__(transcriptions, goal)
+
+    def apply(self):
+        result = []
+        for transcription in self._transcriptions:
+            if transcription.getDate() == self._goal:
+                result.append(transcription)
+        return result

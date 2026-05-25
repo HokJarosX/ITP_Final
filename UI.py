@@ -1,9 +1,10 @@
 from classes import transactions
+from filter import FilterCategory
 from services.overspending import detect_overspending, print_overspending_report
 from input.parser import load
 from services.expences import catergories_expenses
 from services.monthlySummary import monthlySummary
-
+from services.filter import Filter, FilterData, FilterCategory
 def setBudget(my_budget):
     categories = input("Enter categories: ")
     if categories in my_budget:
@@ -40,7 +41,9 @@ def UserInterface():
         print("2. Show categories")
         print("3. Show monthly summary")
         print("4. Show overspendings")
-        print("5. Exit")
+        print("5. Filter by category")
+        print("6. Filter by data")
+        print("7. Exit")
 
         x = int(input("Enter a number: "))
         if x == 0:
@@ -54,8 +57,18 @@ def UserInterface():
         elif x == 4:
             result = detect_overspending(tr, my_budgets)
             print_overspending_report(result)
-        elif x == 5:
-            break
 
+        elif x == 5:
+            inp = input("Enter a category: ")
+            MyFilter = FilterCategory(tr, inp)
+            print(MyFilter.apply())
+
+        elif x == 6:
+            inp = input("Enter a data: ")
+            MyFilter = FilterData(tr, inp)
+            print(MyFilter.apply())
+
+        elif x == 7:
+            break
 
 
