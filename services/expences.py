@@ -20,8 +20,7 @@ def catergories_expenses(transactions):
 
 
         }
-        summer = ("summ", sum(report))
-    return report, summer
+    return report
 
 
 
