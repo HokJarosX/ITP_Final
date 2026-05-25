@@ -1,8 +1,14 @@
-from input.parser import load
-from services.expences import catergories_expenses
-
 def detect_overspending(transactions, budgets):
-    actual = catergories_expenses(transactions)
+    actual = {}
+    for transaction in transactions :
+        if transaction.getType() == "expense":
+            category = transaction.getCategory()
+            amount = transaction.getAmount()
+            if category in actual:
+                actual[category]+= amount
+            else:
+                actual[category] = amount
+
     result = {}
 
     for category, limit in budgets.items():
@@ -31,23 +37,7 @@ def get_default_budgets():
     }
 
 
-if __name__ == "__main__":
 
-    try:
-
-        transactions = load("data/transaction.json")
-
-        result = detect_overspending(
-        transactions,
-        get_default_budgets()
-        )
-
-        print_overspending_report(result)
-    except FileNotFoundError:
-        print("Transaction file not found ")
-
-    except Exception as e:
-        print("An error occured ", e)
 
 
 

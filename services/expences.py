@@ -1,16 +1,28 @@
-from input.parser import load
 from classes.transactions import Transaction
 
 
 
 def catergories_expenses(transactions):
     expences = {}
+    total_spen = 0
     only_expenses = (tr for tr in transactions if tr.getType() == "expense")
     for tr in only_expenses:
-        if tr.getType() == "expense":
-            cat = tr.getCategory() or "Other"
-            expences[cat] = expences.get(cat, 0) + tr.getAmount()
-    return expences
+        cat = tr.getCategory() or "Other"
+        amount = tr.getAmount()
+        expences[cat] = expences.get(cat, 0) + amount
+        total_spen += amount
+    report = {}
+    for cat, amount in expences.items():
+        parcent =  (amount / total_spen) * 100 if amount > 0 else 0
+        report[cat] = {
+            "spen" : amount,
+            "parcent %" :  round(parcent , 1)
+
+
+        }
+    return report
+
+
 
 
 
