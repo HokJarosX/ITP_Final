@@ -49,7 +49,7 @@ def UserInterface():
         if x == 0:
             setBudget(my_budgets)
         elif x == 1:
-            print(f"All transactions: {tr}")
+            print(f"All transactions: {dict(enumerate(tr))}")
         elif x == 2:
             print(f"Categories: {report}")
         elif x == 3:

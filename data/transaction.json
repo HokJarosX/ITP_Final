@@ -7,7 +7,7 @@
   {"type": "expense", "category": "shopping", "amount": 80, "date": "2026-05-04"},
   {"type": "income", "amount": 300, "date": "2026-05-05"},
   {"type": "expense", "category": "bills", "amount": 120, "date": "2026-05-06"},
-  {"type": "expense", "category": "food", "amount": 22, "date": "2026-05-07"},
+  {"type": "expense", "category": "fofod", "amount": 22, "date": "2026-05-07"},
   {"type": "expense", "category": "transport", "amount": 9, "date": "2026-05-08"},
   {"type": "expense", "category": "health", "amount": 45, "date": "2026-05-09"},
   {"type": "expense", "category": "food", "amount": 17, "date": "2026-05-10"},
