@@ -1,6 +1,6 @@
-def detect_overspending(transactions, budgets):
+def detect_overspending(self, budgets):
     actual = {}
-    for transaction in transactions :
+    for transaction in self._transactions :
         if transaction.getType() == "expense":
             category = transaction.getCategory()
             amount = transaction.getAmount()
@@ -22,14 +22,14 @@ def detect_overspending(transactions, budgets):
             }
     return result
 
-def print_overspending_report(result):
+def print_overspending_report(self, result):
     if not result:
         print("no overspending detected")
         return
     for category, info in result.items():
         print(f"{category}: overspent by ${info['over_by']}")
 
-def get_default_budgets():
+def get_default_budgets(self):
     return {
         "food": 50,
         "transport": 15,
