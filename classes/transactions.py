@@ -7,7 +7,7 @@ class Transaction:
 
 
     def __repr__(self):
-        return f"{self._type} {self._type.upper()} {self._category or 'No category'} {self._amount}$"
+        return f"{self._type} {self._category or 'No category'} {self._amount}$"
 
     def getType(self):
         return self._type
@@ -24,4 +24,4 @@ class Transaction:
                 f"|amount = {self._amount}|"
                 f"|date = {self._date}|")
     def __iter__(self):
-        return iter([self.type,self.category,self.amount,self.date])
+        return iter([self._type,self._category,self._amount,self._date])
