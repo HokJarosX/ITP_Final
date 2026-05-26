@@ -30,7 +30,8 @@ class FinanceTracker:
         total_spen = 0
         only_expenses = (tr for tr in self._transactions if tr.getType() == "expense")
         for tr in only_expenses:
-            cat = tr.getCategory() or "Other"
+            cat = tr.getCategory() or (""
+                                       "Other")
             amount = tr.getAmount()
             expences[cat] = expences.get(cat, 0) + amount
             total_spen += amount
