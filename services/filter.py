@@ -22,13 +22,15 @@ class FilterCategory(Filter):
                 result.append(transcription)
         return result
 
-class FilterData(Filter):
-    def __init__(self, transcriptions = None, goal = ""):
-        super().__init__(transcriptions, goal)
+class FilterDate(Filter):
+    def __init__(self, transcriptions = None, firstDate = "", secondDate = ""):
+        super().__init__(transcriptions)
+        self._firstDate = firstDate
+        self._secondDate = secondDate
 
     def apply(self):
         result = []
         for transcription in self._transcriptions:
-            if transcription.getDate() == self._goal:
+            if self._firstDate <= transcription.getDate() <= self._secondDate:
                 result.append(transcription)
         return result
