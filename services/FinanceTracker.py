@@ -85,3 +85,4 @@ class FinanceTracker:
             "shopping": 50,
         }
 
+
