@@ -17,6 +17,7 @@ class FinanceTracker:
                 incomeExpemceConutAndTotal["totalIncome"] += transaction.getAmount()
                 incomeExpemceConutAndTotal["currentBalance"] += transaction.getAmount()
 
+
             else:
                 incomeExpemceConutAndTotal["expensesCount"] += 1
                 incomeExpemceConutAndTotal["totalExpenses"] += transaction.getAmount()
